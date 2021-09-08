@@ -4,45 +4,22 @@
     </a>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <!--      <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>-->
       <li><%= link_to 'Home', root_path, :class => 'nav-link px-2 link-secondary' %></li>
-      <!--      <li><a href="#" class="nav-link px-2 link-dark">User List</a></li>-->
       <li><%= link_to 'User List', "#", :class => 'nav-link px-2 link-dark' %></li>
     </ul>
 
     <% if user_signed_in? %>
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown button
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown">
+          <%= current_user.email %>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><%= link_to 'Profile', "#", :class => 'dropdown-item' %></li>
+          <li><%= link_to 'Edit', edit_user_registration_path, :class => 'dropdown-item' %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>
         </ul>
       </div>
-<!--      <div class="dropdown">-->
-<!--        <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown">-->
-          <%#= current_user.email %>
-<!--        </button>-->
-<!--        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">-->
-<!--          <li><%#= link_to 'Profile', "#", :class => 'dropdown-item' %></li>-->
-<!--          <li><%#= link_to 'Edit', edit_user_registration_path, :class => 'dropdown-item' %></li>-->
-<!--          <li><hr class="dropdown-divider"></li>-->
-<!--          <li><%#= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-      <!--      <li class="nav-item px-2 link-dark dropdown">-->
-      <!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-      <!--          Yee-->
-      <!--        </a>-->
-      <!--        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-      <!--          <li><%#= link_to 'Profile', "#", :class => 'dropdown-item' %></li>-->
-      <!--          <li><%#= link_to 'Edit', edit_user_registration_path, :class => 'dropdown-item' %></li>-->
-      <!--          <li><hr class="dropdown-divider"></li>-->
-      <!--          <li><%#= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>-->
-      <!--        </ul>-->
-      <!--      </li>-->
     <% else %>
       <div class="col-md-3 text-end">
         <%= link_to 'Sign In', new_user_session_path, class: "btn btn-outline-primary me-2"%>
