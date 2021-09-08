@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>User List</h1>
+
+  <div id="table">
+    <table class="table">
+      <thead>
+      <tr>
+        <!-- List JS needs the class "sort" and data-sort="your_column_name" -->
+        <th scope="col" class="sort" data-sort="id">#</th>
+        <th scope="col" class="sort" data-sort="firstname">First Name</th>
+        <th scope="col" class="sort" data-sort="lastname">Last Name</th>
+        <th scope="col" class="sort" data-sort="username">Username</th>
+      </tr>
+      </thead>
+      <tbody class="list">
+      <tr>
+        <!-- Each row must have the class of your_column_name used above -->
+        <th scope="row" class="id">1</th>
+        <td class="firstname">Mark</td>
+        <td class="lastname">Otto</td>
+        <td class="username">@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row" class="id">2</th>
+        <td class="firstname">Jacob</td>
+        <td class="lastname">Thornton</td>
+        <td class="username">@fat</td>
+      </tr>
+      <tr>
+        <th scope="row" class="id">3</th>
+        <td class="firstname">Larry</td>
+        <td class="lastname">the Bird</td>
+        <td class="username">@twitter</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <%# @users.each do |user| %>
+<!--    <tr>-->
+<!--      <td><%#= user.name %></td>-->
+<!--      <td><%#= user.email %></td>-->
+<!--      <td> <%#= link_to 'Show', user %> </td>-->
+<!--    </tr>-->
+  <%# end %>
+</div>
