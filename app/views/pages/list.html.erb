@@ -7,9 +7,8 @@
       <tr>
         <!-- List JS needs the class "sort" and data-sort="your_column_name" -->
         <th scope="col" class="sort" data-sort="id">#</th>
-          <th scope="col" class="sort" data-sort="firstname">First Name</th>
-          <th scope="col" class="sort" data-sort="lastname">Last Name</th>
-          <th scope="col" class="sort" data-sort="username">Username</th>
+          <th scope="col" class="sort" data-sort="firstname">Name</th>
+          <th scope="col" class="sort" data-sort="lastname">Provider</th>
       </tr>
       </thead>
       <tbody class="list">
@@ -18,7 +17,7 @@
         <!-- Each row must have the class of your_column_name used above -->
         <th scope="row" class="id"><%= user.id %></th>
         <td class="firstname"><%= user.name %></td>
-        <td class="lastname"><%= user.email %></td>
+        <td class="lastname"><%= user.provider %></td>
       </tr>
       <% end %>
       </tbody>
