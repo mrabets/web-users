@@ -2,13 +2,13 @@
   <h1>User List</h1>
 
   <div id="table">
-    <table class="table">
+    <table class="table table-striped" data-sort-name="id" data-sort-order="desc">
       <thead>
       <tr>
         <!-- List JS needs the class "sort" and data-sort="your_column_name" -->
-        <th scope="col" class="sort" data-sort="id">#</th>
-          <th scope="col" class="sort" data-sort="firstname">Name</th>
-          <th scope="col" class="sort" data-sort="lastname">Provider</th>
+        <th data-field="id" data-sortable="true">#</th>
+          <th data-field="name" data-sortable="true">Name</th>
+          <th data-field="provider" data-sortable="true">Provider</th>
       </tr>
       </thead>
       <tbody class="list">
