@@ -24,13 +24,17 @@
     </table>
   </div>
 
-  <%# @users.each do |user| %>
-<!--    <tr>-->
-<!--      <td><%#= user.name %></td>-->
-<!--      <td><%#= user.email %></td>-->
-<!--      <td> <%#= link_to 'Show', user %> </td>-->
-<!--    </tr>-->
-  <%# end %>
+  <script>
+      window.onload = function() {
+          if (window.jQuery) {
+              // jQuery is loaded
+              alert("Yeah!");
+          } else {
+              // jQuery is not loaded
+              alert("Doesn't Work");
+          }
+      }
+  </script>
 </div>
 
 <p></p>
