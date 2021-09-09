@@ -26,3 +26,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 });
+
+import Chart from 'chart.js/auto';
+
+
+document.addEventListener('turbolinks:load', () => {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: JSON.parse(ctx.canvas.dataset.labels),
+            datasets: [{
+                data: JSON.parse(ctx.canvas.dataset.data),
+                backgroundColor: ['#0778E9', '#161B22', '#EA4335'],
+                borderColor: ['#0778E9', '#161B22', '#EA4335'],
+                borderWidth: 1,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Common user number'
+                }
+            }
+        },
+    });
+})
