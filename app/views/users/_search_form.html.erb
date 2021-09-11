@@ -1,7 +1,11 @@
 <%= search_form_for @q do |f| %>
 
-  <%= f.label :name_or_provider_cont %>
-  <%= f.select :provider_cont, options_for_select(['Facebook', 'Github', 'Google']), include_blank: true %>
+  <%= f.label :provider_cont %>
+  <%= f.select :provider_cont, options_for_select(['Facebook', 'Github', 'Google']), include_blank: true %><br>
+
+  <%= f.label :blocked_at_eq %>
+  <%= f.select :blocked_at_null, options_for_select([['Active', 1], ['Block', 0]]), include_blank: true %>
+
 
   <%= f.submit %>
 <% end %>
