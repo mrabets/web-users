@@ -1,0 +1,7 @@
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name_or_provider_cont %>
+  <%= f.select :provider_cont, options_for_select(['Facebook', 'Github', 'Google']), include_blank: true %>
+
+  <%= f.submit %>
+<% end %>
