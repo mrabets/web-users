@@ -29,7 +29,7 @@ class User < ApplicationRecord
   end
 
   def account_active?
-    blocked_at.nil? || !blocked_at
+    blocked_at.nil?
   end
 
   def active_for_authentication?

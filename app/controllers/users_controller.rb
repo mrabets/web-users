@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     when "Block"
       User.where(id: params[:users]).update_all(blocked_at: true)
     when "Unblock"
-      User.where(id: params[:users]).update_all(blocked_at: false)
+      User.where(id: params[:users]).update_all(blocked_at: nil)
     end
     respond_to do |format|
       format.html { redirect_to users_path }
