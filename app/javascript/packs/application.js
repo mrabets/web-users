@@ -16,6 +16,8 @@ import * as bootstrap from 'bootstrap'
 import "../stylesheets/application"
 require("jquery")
 
+import Chart from 'chart.js/auto';
+
 document.addEventListener("DOMContentLoaded", function(event) {
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
@@ -27,9 +29,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 });
-
-import Chart from 'chart.js/auto';
-
 
 document.addEventListener('turbolinks:load', () => {
     var ctx = document.getElementById('myChart').getContext('2d');

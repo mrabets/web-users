@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'home/index'
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     sessions: 'users/sessions'
   }
-  root to: 'home#index'
-  match '/users/:id',     to: 'users#show',       via: 'get'
-  get '/list', to:   'pages#list'
 
+  root to: 'home#index'
   get '/users', to: 'users#index'
 
   resources :users do
