@@ -3,55 +3,35 @@
 
   <%= render 'users/search_form.html.erb' %>
 
-  <%= form_tag destroy_multiple_users_path, method: :delete do %>
-    <%= submit_tag "Delete selected" %>
+  <%= form_tag batch_operation_users_path, method: :patch do %>
+    <%= submit_tag "Delete" %>
+    <%= submit_tag "Block" %>
+    <%= submit_tag "Unblock" %>
+
   <table class="table table-striped">
     <thead>
     <tr>
       <th><input type="checkbox" onClick="toggle(this)" /> Toggle All<br/></th>
       <th><%= sort_link(@q, :name, 'Name') %></th>
       <th><%= sort_link(@q, :provider, 'Provider') %></th>
+      <th><%= sort_link(@q, :blocked_at, 'Status') %></th>
       <th colspan="3"></th>
     </tr>
     </thead>
-
     <tbody>
     <% @users.each do |user| %>
       <tr>
         <td>
           <%= check_box_tag 'users[]', user.id %>
         </td>
-
         <td><%= user.name %></td>
         <td><%= user.provider %></td>
-        <!--        <td><%#= link_to 'Show', user %></td>-->
-        <!--        <td><%#= link_to 'Edit', edit_user_path(user) %></td>-->
-        <!--        <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-      </tr>
+        <td><%= user.blocked_at?  ? "Block" : "Unblock" %></td>
+       </tr>
     <% end %>
     </tbody>
   </table>
   <% end %>
-  <!--  <div id="mytable">-->
-  <!--    <table class="table table-striped" data-sort-name="id" data-sort-order="desc">-->
-  <!--      <thead>-->
-  <!--      <tr>-->
-  <!--        <th data-field="id" data-sortable="true">#</th>-->
-  <!--          <th data-field="name" data-sortable="true">Name</th>-->
-  <!--          <th data-field="provider" data-sortable="true">Provider</th>-->
-  <!--      </tr>-->
-  <!--      </thead>-->
-  <!--      <tbody class="list">-->
-  <%# @users.each do |user| %>
-  <!--      <tr>-->
-  <!--        <th scope="row" class="id"><%#= user.id %></th>-->
-  <!--        <td class="firstname"><%#= user.name %></td>-->
-  <!--        <td class="lastname"><%#= user.provider %></td>-->
-  <!--      </tr>-->
-  <%# end %>
-  <!--      </tbody>-->
-  <!--    </table>-->
-  <!--  </div>-->
 
   <script type="text/javascript">
       function toggle(source) {
