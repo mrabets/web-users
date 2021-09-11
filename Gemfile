@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
 
-gem "bootstrap_form", "~> 4.0"
 gem 'ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

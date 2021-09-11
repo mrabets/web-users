@@ -1,2 +1,32 @@
 @import "bootstrap";
-//@import "rails_bootstrap_forms";
+
+h1 {
+  line-height: 1;
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.c-nav li {
+  display: inline-block;
+  padding-right: 16px;
+}
+
+.social-icons {
+  margin-left: 10px;
+}
