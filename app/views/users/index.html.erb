@@ -12,8 +12,11 @@
     <thead>
     <tr>
       <th><input type="checkbox" onClick="toggle(this)" /> Toggle All<br/></th>
+      <th><%= sort_link(@q, :id, 'ID') %></th>
       <th><%= sort_link(@q, :name, 'Name') %></th>
       <th><%= sort_link(@q, :provider, 'Provider') %></th>
+      <th><%= sort_link(@q, :created_at, 'First login') %></th>
+      <th><%= sort_link(@q, :last_sign_in_at, 'Last login') %></th>
       <th><%= sort_link(@q, :blocked_at, 'Status') %></th>
       <th colspan="3"></th>
     </tr>
@@ -24,9 +27,12 @@
         <td>
           <%= check_box_tag 'users[]', user.id %>
         </td>
+        <td><%= user.id %></td>
         <td><%= user.name %></td>
-        <td><%= user.provider %></td>
-        <td><%= user.blocked_at?  ? "Block" : "Unblock" %></td>
+        <td><%= user.provider.capitalize %></td>
+        <td><%= user.created_at.to_formatted_s(:long) %></td>
+        <td><%= user.last_sign_in_at.to_formatted_s(:long) %></td>
+        <td><%= user.blocked_at?  ? "Block" : "Active" %></td>
        </tr>
     <% end %>
     </tbody>
@@ -42,5 +48,3 @@
       }
   </script>
 </div>
-
-<p></p>

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @q = User.ransack(params[:q])
     @users = @q.result(distinct: true)
@@ -13,21 +15,9 @@ class UsersController < ApplicationController
     when "Unblock"
       User.where(id: params[:users]).update_all(blocked_at: false)
     end
-
     respond_to do |format|
       format.html { redirect_to users_path }
       format.json { head :no_content }
     end
-  end
-
-  def destroy_multiple
-
-    User.destroy(params[:users])
-
-    respond_to do |format|
-      format.html { redirect_to users_path }
-      format.json { head :no_content }
-    end
-
   end
 end
