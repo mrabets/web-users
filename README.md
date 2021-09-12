@@ -1,9 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Simple app with facebook, github, google authentications using [OmniAuth Gem](https://github.com/omniauth/omniauth). There is a table with sorting, filtering and searching with [Ransack Gem](https://github.com/activerecord-hackery/ransack).
 
 * Configuration
 
