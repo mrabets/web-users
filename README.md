@@ -5,18 +5,16 @@ Simple app with facebook, github, google authentications using [OmniAuth Gem](ht
 * Configuration
 
 ```
-cd web-users
+bundle update
+bundle
 
 rm config/credentials.yml.enc
-
 EDITOR="nano" rails credentials:edit
 
 rails db:reset
 
 yarn add @rails/webpacker
-
 bundle update webpacker
-
 bundle exec rails webpacker:compile
 
 bundle exec rails server
