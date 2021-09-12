@@ -23,7 +23,7 @@ bundle update webpacker
 bundle exec rails webpacker:compile
 
 bundle exec rails server
-
+```
 
 * Database creation
 
