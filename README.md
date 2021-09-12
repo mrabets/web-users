@@ -38,6 +38,5 @@ DATABASE_URL = [mysql2:// ...]
 heroku config:set RAILS_MASTER_KEY="$(< config/master.key)"
 git push heroku main
 heroku run rake db:migrate
-
-See [Heroku Doc](https://devcenter.heroku.com/articles/getting-started-with-rails6#specify-your-ruby-version)
 ```
+See [Heroku Doc](https://devcenter.heroku.com/articles/getting-started-with-rails6#specify-your-ruby-version)
