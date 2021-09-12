@@ -38,5 +38,9 @@ DATABASE_URL = [mysql2:// ...]
 * Deployment instructions
 ```
 heroku config:set RAILS_MASTER_KEY="$(< config/master.key)"
+git push heroku main
+heroku run rake db:migrate
+
+See [https://devcenter.heroku.com/articles/getting-started-with-rails6#specify-your-ruby-version]
 ```
 * ...
