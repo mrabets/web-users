@@ -50,6 +50,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  username: devuser
+  password: 12102001Km_
   database: site_production
-  username: site
-  password: <%= ENV['SITE_DATABASE_PASSWORD'] %>
