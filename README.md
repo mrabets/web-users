@@ -5,11 +5,25 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
 * Configuration
+
+```
+cd web-users
+
+rm config/credentials.yml.enc
+
+EDITOR="nano" rails credentials:edit
+
+rails db:reset
+
+yarn add @rails/webpacker
+
+bundle update webpacker
+
+bundle exec rails webpacker:compile
+
+bundle exec rails server
+```
 
 * Database creation
 
