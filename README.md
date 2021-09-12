@@ -23,16 +23,20 @@ bundle update webpacker
 bundle exec rails webpacker:compile
 
 bundle exec rails server
-```
+
 
 * Database creation
 
 * Database initialization
-
+```
+DATABASE_URL = [mysql2:// ...]
+```
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
+```
+heroku config:set RAILS_MASTER_KEY="$(< config/master.key)"
+```
 * ...
