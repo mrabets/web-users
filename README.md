@@ -21,6 +21,8 @@ If not work enter:
 sudo service mysql start
 ```
 ```
+rails webpacker:install
+
 yarn add @rails/webpacker
 bundle update webpacker
 bundle exec rails webpacker:compile
